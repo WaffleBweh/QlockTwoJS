@@ -1,3 +1,10 @@
+<!--****************************************************************************//
+Nom          : index.php
+Date         : 24.02.15
+Version      : 0.1
+Auteur       : SEEMULLER Julien
+Description  : La page d'acceuil du site web
+****************************************************************************//-->
 <!doctype html>
 <html class="no-js" lang="fr">
     <head>  
@@ -7,6 +14,7 @@
         <meta name="author" content="SEEMULLER Julien">
         <meta name="description" content="QlockTwo JavaScript Replica">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href='http://fonts.googleapis.com/css?family=Josefin+Sans&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
@@ -15,6 +23,9 @@
             </header>
         </div>
         <div class="main-container">
+            <div id="matrix">
+                
+            </div>
         </div> <!-- Container principal -->
 
         <div class="footer-container">

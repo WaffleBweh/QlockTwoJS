@@ -1,3 +1,11 @@
+//****************************************************************************//
+//Nom          : core.js
+//Date         : 24.02.15
+//Version      : 0.1
+//Auteur       : SEEMULLER Julien
+//Description  : Le script permettant de génerer et gerer l'horloge.
+//****************************************************************************//
+
 var arrayLetters = [
     ["I", "L", "N", "E", "S", "T", "O", "U", "N", "E", "R"],
     ["D", "E", "U", "X", "N", "U", "T", "R", "O", "I", "S"],
@@ -10,4 +18,13 @@ var arrayLetters = [
     ["V", "I", "N", "G", "T", "-", "C", "I", "N", "Q", "U"],
     ["E", "T", "S", "D", "E", "M", "I", "E", "P", "A", "N"]
 ];
+var div = $("<div>", {class: "letter"});
+
+for (i = 0; i < arrayLetters.length; i++) {
+    for (j = 0; j < arrayLetters[i].length; j++) {
+        div.append(arrayLetters[i][j]);
+    }
+}
+
+$( "#matrix" ).append(div);
 
