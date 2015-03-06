@@ -8,27 +8,34 @@
 
 @import url(http://fonts.googleapis.com/css?family=Josefin+Sans);
 #main-container{
-    width: 1280px;
-    height: 720px;
+    width: 700px;
+    height: 700px;
+    background: #151515;
+    margin: auto;
 }
 
 #matrix{
-    width: 550px;
+    width: 600px;
     height: 550px;
     margin: auto;
+    margin-top: 100px;
     background-color: #151515;
-    color: white;
+    color: #999999;
     font-size: 30px;
     font-family:'Josefin Sans', Arial, sans-serif;
     word-wrap: break-word;
+    padding: 20px;
 }
 
-#matrix tr{
-    width: 100%;
-    height: 10%;
-}
-
-#matrix tr td{
-    width: 10%;
+.letterBox{
+    width: 50px;
+    height: 51px;
     text-align: center;
+    float: left;
+    padding-left: 4px;
+    padding-top: 5px; 
+}
+.lightLetter{
+    color: white;
+    text-shadow: 0 0 9px white;
 }

@@ -24,7 +24,6 @@ Description  : La page d'acceuil du site web
         </div>
         <div class="main-container">
             <div id="matrix">
-                
             </div>
         </div> <!-- Container principal -->
 
