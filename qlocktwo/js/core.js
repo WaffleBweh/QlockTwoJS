@@ -43,8 +43,9 @@ var sentence = {
     },
     //Minutes
     minute: {
+        0: [[8, 6, 9]], //REMOVE THIS LATER
         5: [[8, 6, 9]],
-        10: [[6, 9, 10]],
+        10: [[6, 8, 10]],
         15: [[7, 0, 1], [7, 3, 7]],
         20: [[8, 0, 4]],
         25: [[8, 0, 9]],
@@ -60,7 +61,7 @@ var sentence = {
 //On parcours le tableau de lettre et on crée un div de 50px/50px pour chaque lettres
 for (i = 0; i < arrayLetters.length; i++) {
     for (j = 0; j < arrayLetters[i].length; j++) {
-        $("#matrix").append("<div class=\"letterBox\">" + arrayLetters[i][j] + "</div>");
+        $("#matrix").append("<div class=\"letterBox"+ " " + i + j +"\">" + arrayLetters[i][j] + "</div>");
     }
 }
 
@@ -77,14 +78,22 @@ setInterval(function() {
 }, 1000);
 function updateClock() {
     currentTime = updateTime();
+    //On limite les heures à un format 12 heures
+    newHours = currentTime.hours;
+    if (newHours > 12){
+        newHours -= 12;
+    }
     //On coupe les minutes par tranche de 5min
     newMinutes = Math.floor(currentTime.minutes / 5) * 5
-
+    
+    //On crée 
     minuteArray = sentence.minute[newMinutes];
-
-    for (i = 0; i < minuteArray.length; i++) {
-        for (j = 0; j < minuteArray[i].length; j++) {
-            console.log(minuteArray[i][j])
-        }
-    }
+    
+    //On parcours notre array pour recuperer les caractère à illuminer, puis on les illumine
+    minuteArray.forEach(function (y) {
+        for (i = y[1]; i <= y[2]; i++){
+            $("." + y[0] + i).addClass("lightLetter");
+            console.log(i);
+        }   
+    });
 }
