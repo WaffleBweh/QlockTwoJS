@@ -53,7 +53,7 @@ var sentence = {
         35: [[6, 0, 4], [8, 0, 9]],
         40: [[6, 0, 4], [8, 0, 4]],
         45: [[6, 0, 4], [7, 3, 7]],
-        50: [[6, 0, 4], [6, 9, 10]],
+        50: [[6, 0, 4], [6, 8, 10]],
         55: [[6, 0, 4], [8, 6, 9]]
     }
 };
@@ -61,7 +61,7 @@ var sentence = {
 //On parcours le tableau de lettre et on crée un div de 50px/50px pour chaque lettres
 for (i = 0; i < arrayLetters.length; i++) {
     for (j = 0; j < arrayLetters[i].length; j++) {
-        $("#matrix").append("<div class=\"letterBox"+ " " + i + j +"\">" + arrayLetters[i][j] + "</div>");
+        $("#matrix").append("<div class=\"letterBox" + " " + i + j + "\">" + arrayLetters[i][j] + "</div>");
     }
 }
 
@@ -78,22 +78,46 @@ setInterval(function() {
 }, 1000);
 function updateClock() {
     currentTime = updateTime();
+    
+    //On nettoye les lettres avant d'en afficher des nouvelles
+    $(".letterBox").removeClass("lightLetter");
+    
+    //On affiche les infos permanantes
+    sentence.pre.all.forEach(function(y) {
+        for (i = y[1]; i <= y[2]; i++) {
+            $("." + y[0] + i).addClass("lightLetter");
+        }
+    });
+
+    //On coupe les minutes par tranche de 5min
+    newMinutes = Math.floor(currentTime.minutes / 5) * 5;
+
+    //On crée un array pour les minutes formatées correctement
+    minuteArray = sentence.minute[newMinutes];
+
+    //On parcours notre array pour recuperer les caractère à illuminer, puis on les illumine
+    minuteArray.forEach(function(y) {
+        for (i = y[1]; i <= y[2]; i++) {
+            $("." + y[0] + i).addClass("lightLetter");
+        }
+    });
+
     //On limite les heures à un format 12 heures
     newHours = currentTime.hours;
-    if (newHours > 12){
+    if (newHours > 12) {
         newHours -= 12;
     }
-    //On coupe les minutes par tranche de 5min
-    newMinutes = Math.floor(currentTime.minutes / 5) * 5
-    
-    //On crée 
-    minuteArray = sentence.minute[newMinutes];
-    
-    //On parcours notre array pour recuperer les caractère à illuminer, puis on les illumine
-    minuteArray.forEach(function (y) {
-        for (i = y[1]; i <= y[2]; i++){
+    //Si les minutes sont au dessus de 30, on ajoute 1 a l'heure
+    //Ex : il est CINQ heures MOINS vingt-cinq
+    if (newMinutes > 30) {
+        newHours += 1;
+    }
+    //On crée un array pour les heures formatées correctement
+    hoursArray = sentence.hour[newHours];
+
+    hoursArray.forEach(function(y) {
+        for (i = y[1]; i <= y[2]; i++) {
             $("." + y[0] + i).addClass("lightLetter");
-            console.log(i);
-        }   
+        }
     });
 }

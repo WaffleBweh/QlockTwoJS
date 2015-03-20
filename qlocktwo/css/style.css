@@ -19,8 +19,8 @@
     height: 550px;
     margin: auto;
     margin-top: 100px;
-    background-color: #151515;
-    color: #999999;
+    background-color: #050505;
+    color: #404040;
     font-size: 30px;
     font-family:'Josefin Sans', Arial, sans-serif;
     word-wrap: break-word;
@@ -29,7 +29,7 @@
 
 .letterBox{
     width: 50px;
-    height: 51px;
+    height: 50px;
     text-align: center;
     float: left;
     padding-left: 4px;
