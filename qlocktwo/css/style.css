@@ -8,9 +8,8 @@
 
 @import url(http://fonts.googleapis.com/css?family=Josefin+Sans);
 #main-container{
-    width: 700px;
-    height: 700px;
-    background: #151515;
+    width: auto;
+    height: auto;
     margin: auto;
 }
 
@@ -18,13 +17,29 @@
     width: 600px;
     height: 550px;
     margin: auto;
-    margin-top: 100px;
     background-color: #050505;
     color: #404040;
     font-size: 30px;
     font-family:'Josefin Sans', Arial, sans-serif;
     word-wrap: break-word;
-    padding: 20px;
+    padding: 10%;
+}
+
+#qlock{
+    width: 700px;
+    height: 650px;
+    margin: auto;
+    position: relative;
+}
+
+#dot-container{
+    width: 700px;
+    height: 650px;
+    background-color: #050505;
+    color: #404040;
+    font-size: 30px;
+    left: 50%;
+    right: 50%;
 }
 
 .letterBox{
@@ -38,4 +53,28 @@
 .lightLetter{
     color: white;
     text-shadow: 0 0 9px white;
+}
+
+#point1, #point2, #point3, #point4{
+    position: absolute;
+}
+
+#point1{
+    top: 20px;
+    left: 40px;
+}
+
+#point2{
+    top: 20px;
+    right: 0px;
+}
+
+#point3{
+    bottom: -15px;
+    right: 0px;
+}
+
+#point4{
+    bottom: -15px;
+    left: 40px;
 }

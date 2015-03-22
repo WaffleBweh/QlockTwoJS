@@ -23,7 +23,10 @@ Description  : La page d'acceuil du site web
             </header>
         </div>
         <div class="main-container">
-            <div id="matrix">
+            <div id="qlock">
+                <div id="dot-container">
+                    <div id="matrix"></div>
+                </div>
             </div>
         </div> <!-- Container principal -->
 
@@ -31,7 +34,7 @@ Description  : La page d'acceuil du site web
             <footer>
             </footer>
         </div>
-        
+
         <!--Initialisation de jQuery et des scripts JS-->
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.js"><\/script>')</script>

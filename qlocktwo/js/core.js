@@ -44,19 +44,23 @@ var sentence = {
     //Minutes
     minute: {
         0: [[5, 5, 10]],
-        5: [[8, 6, 9],[5, 5, 10]],
-        10: [[6, 8, 10],[5, 5, 10]],
-        15: [[7, 0, 1], [7, 3, 7],[5, 5, 10]],
-        20: [[8, 0, 4],[5, 5, 10]],
-        25: [[8, 0, 9],[5, 5, 10]],
-        30: [[9, 0, 1], [9, 3, 6],[5, 5, 10]],
-        35: [[6, 0, 4], [8, 0, 9],[5, 5, 10]],
-        40: [[6, 0, 4], [8, 0, 4],[5, 5, 10]],
-        45: [[6, 0, 4], [7, 3, 7],[5, 5, 10]],
-        50: [[6, 0, 4], [6, 8, 10],[5, 5, 10]],
-        55: [[6, 0, 4], [8, 6, 9],[5, 5, 10]]
-    }
+        5: [[8, 6, 9], [5, 5, 10]],
+        10: [[6, 8, 10], [5, 5, 10]],
+        15: [[7, 0, 1], [7, 3, 7], [5, 5, 10]],
+        20: [[8, 0, 4], [5, 5, 10]],
+        25: [[8, 0, 9], [5, 5, 10]],
+        30: [[9, 0, 1], [9, 3, 6], [5, 5, 10]],
+        35: [[6, 0, 4], [8, 0, 9], [5, 5, 10]],
+        40: [[6, 0, 4], [8, 0, 4], [5, 5, 10]],
+        45: [[6, 0, 4], [7, 3, 7], [5, 5, 10]],
+        50: [[6, 0, 4], [6, 8, 10], [5, 5, 10]],
+        55: [[6, 0, 4], [8, 6, 9], [5, 5, 10]]
+    },
 };
+
+for (i = 1; i <= 4; i++) {
+    $("#dot-container").append("<span id=\"point" + i + "\" class=\"dot\">●</span>");
+}
 
 //On parcours le tableau de lettre et on crée un div de 50px/50px pour chaque lettres
 for (i = 0; i < arrayLetters.length; i++) {
@@ -73,17 +77,18 @@ function updateTime() {
 }
 
 //On met à jour l'horloge en fonction de l'heure (chaque 1000ms)
-setInterval(function() {
+setInterval(function () {
     updateClock();
 }, 1000);
 function updateClock() {
     currentTime = updateTime();
-    
-    //On nettoye les lettres avant d'en afficher des nouvelles
+
+    //On nettoye les lettres et les points avant d'en afficher des nouvelles
     $(".letterBox").removeClass("lightLetter");
-    
+    $(".dot").removeClass("lightLetter");
+
     //On affiche les infos permanantes
-    sentence.pre.all.forEach(function(y) {
+    sentence.pre.all.forEach(function (y) {
         for (i = y[1]; i <= y[2]; i++) {
             $("." + y[0] + i).addClass("lightLetter");
         }
@@ -91,16 +96,23 @@ function updateClock() {
 
     //On coupe les minutes par tranche de 5min
     newMinutes = Math.floor(currentTime.minutes / 5) * 5;
+    //On crée une variable pour les minutes des points
+    dotMinutes = currentTime.minutes - newMinutes;
 
     //On crée un array pour les minutes formatées correctement
     minuteArray = sentence.minute[newMinutes];
 
-    //On parcours notre array pour recuperer les caractère à illuminer, puis on les illumine
-    minuteArray.forEach(function(y) {
+    //On parcours notre array des minutes pour recuperer les caractère à illuminer, puis on les illumine
+    minuteArray.forEach(function (y) {
         for (i = y[1]; i <= y[2]; i++) {
             $("." + y[0] + i).addClass("lightLetter");
         }
     });
+
+    //On affiche les minutes précises graces aux points
+    for (i = 1; i <= dotMinutes; i++) {
+        $("#point" + i).addClass("lightLetter");
+    }
 
     //On limite les heures à un format 12 heures
     newHours = currentTime.hours;
@@ -115,7 +127,7 @@ function updateClock() {
     //On crée un array pour les heures formatées correctement
     hoursArray = sentence.hour[newHours];
 
-    hoursArray.forEach(function(y) {
+    hoursArray.forEach(function (y) {
         for (i = y[1]; i <= y[2]; i++) {
             $("." + y[0] + i).addClass("lightLetter");
         }
