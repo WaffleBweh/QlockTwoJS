@@ -38,6 +38,6 @@ Description  : La page d'acceuil du site web
         <!--Initialisation de jQuery et des scripts JS-->
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.js"><\/script>')</script>
-        <script src="js/core.js"></script>
+        <script src="js/core_en.js"></script>
     </body>
 </html>
