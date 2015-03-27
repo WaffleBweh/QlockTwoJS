@@ -49,6 +49,10 @@
     float: left;
     padding-left: 4px;
     padding-top: 5px; 
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
 }
 .lightLetter{
     color: white;
@@ -57,6 +61,10 @@
 
 #point1, #point2, #point3, #point4{
     position: absolute;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
 }
 
 #point1{
@@ -77,4 +85,36 @@
 #point4{
     bottom: -15px;
     left: 40px;
+}
+
+.button-container{
+    height: 20px;
+    width: 200px;
+    margin: auto;
+    margin-top: 120px;
+    background-color: #050505;
+    text-align: center;
+    padding: 1%;
+}
+
+.btnLanguage{
+    background-color: #050505;
+    color: #404040;
+    border: none;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 15px;
+    font-family:'Josefin Sans', Arial, sans-serif;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
+.btnLanguage:hover{
+    color: white;
+    text-shadow: 0 0 9px white;
+}
+
+.btnLanguage:focus {
+    outline-width: 0;
 }

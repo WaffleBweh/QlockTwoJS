@@ -28,7 +28,13 @@ Description  : La page d'acceuil du site web
                     <div id="matrix"></div>
                 </div>
             </div>
+            
+            <div class="button-container">
+                <button id="btnFR" class="btnLanguage" type="button">FRANCAIS</button>
+                <button id="btnEN" class="btnLanguage" type="button">ANGLAIS</button>
+            </div>
         </div> <!-- Container principal -->
+
 
         <div class="footer-container">
             <footer>
@@ -38,6 +44,6 @@ Description  : La page d'acceuil du site web
         <!--Initialisation de jQuery et des scripts JS-->
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.js"><\/script>')</script>
-        <script src="js/core_en.js"></script>
+        <script src="js/core.js"></script>
     </body>
 </html>
