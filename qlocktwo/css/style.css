@@ -23,6 +23,10 @@
     font-family:'Josefin Sans', Arial, sans-serif;
     word-wrap: break-word;
     padding: 10%;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
 }
 
 #qlock{
@@ -30,6 +34,10 @@
     height: 650px;
     margin: auto;
     position: relative;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
 }
 
 #dot-container{
@@ -117,4 +125,72 @@
 
 .btnLanguage:focus {
     outline-width: 0;
+}
+
+.button-color-container{
+    height: 40px;
+    width: 200px;
+    margin: auto;
+    margin-top: 10px;
+    background-color: #050505;
+    text-align: center;
+    padding: 1%;
+    color: #404040;
+    font-family:'Josefin Sans', Arial, sans-serif;
+    font-size: 12px;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
+
+.btnColor{
+    width: 15px;
+    height: 15px;
+    border: 1px solid white;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
+span:hover{
+    color: white;
+    text-shadow: 0 0 9px white;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
+
+.btnColor:hover{
+    color: white;
+    box-shadow: 0 0 9px white;
+}
+
+.btnColor:focus {
+    outline-width: 0;
+}
+
+#btnBLACK{
+    background-color: #050505; 
+}
+
+#btnRED{
+    background-color: #FF4848;
+}
+
+#btnBLUE{
+    background-color: #2F74D0;
+}
+
+#btnGRAY{
+    background-color: #383838;
+}
+
+#btnGREEN{
+    background-color: #1FCB4A;
+}
+
+#btnMAUVE{
+    background-color: #5757FF;
 }

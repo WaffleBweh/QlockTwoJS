@@ -33,6 +33,15 @@ Description  : La page d'acceuil du site web
                 <button id="btnFR" class="btnLanguage" type="button">FRANCAIS</button>
                 <button id="btnEN" class="btnLanguage" type="button">ANGLAIS</button>
             </div>
+            <div class="button-color-container">
+                <span>COLORS : </span><hr/>
+                <button id="btnBLACK" class="btnColor" type="button"></button>
+                <button id="btnGRAY" class="btnColor" type="button"></button>
+                <button id="btnRED" class="btnColor" type="button"></button>
+                <button id="btnBLUE" class="btnColor" type="button"></button>
+                <button id="btnGREEN" class="btnColor" type="button"></button>
+                <button id="btnMAUVE" class="btnColor" type="button"></button>
+            </div>
         </div> <!-- Container principal -->
 
 

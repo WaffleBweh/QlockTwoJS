@@ -11,6 +11,21 @@ var sentence;
 var firstLaunch = true;
 
 
+
+//Changement du thème
+$(".btnColor").click(function () {
+    updateColor($(this).css("background-color"));
+});
+
+function updateColor(color)
+{
+    $("#matrix").css("background-color", color);
+    $(".button-container").css("background-color", color);
+    $(".button-color-container").css("background-color", color);
+    $(".btnLanguage").css("background-color", color);
+}
+
+
 //FRANCAIS
 $("#btnFR").click(function () {
     //On efface le tableau
