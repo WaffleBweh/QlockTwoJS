@@ -11,6 +11,7 @@ var sentence;
 var firstLaunch = true;
 
 
+//FRANCAIS
 $("#btnFR").click(function () {
     //On efface le tableau
     $("#matrix").html("");
@@ -84,6 +85,7 @@ $("#btnFR").click(function () {
     }
 });
 
+//ANGLAIS
 $("#btnEN").click(function () {
     //On efface le tableau
     $("#matrix").html("");
