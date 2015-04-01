@@ -153,14 +153,6 @@
     -o-transition: all 0.3s ease-out;
     transition: all 0.3s ease-out;
 }
-span:hover{
-    color: white;
-    text-shadow: 0 0 9px white;
-    -webkit-transition: all 0.3s ease-out;
-    -moz-transition: all 0.3s ease-out;
-    -o-transition: all 0.3s ease-out;
-    transition: all 0.3s ease-out;
-}
 
 .btnColor:hover{
     color: white;

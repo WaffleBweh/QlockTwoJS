@@ -17,12 +17,23 @@ $(".btnColor").click(function () {
     updateColor($(this).css("background-color"));
 });
 
+//Fonction permettant de teindre la couleur grace à un pourcentage
+//Auteur : "Pimp Trizkit" @ stackoverflow
+function shadeColor(color, percent) {
+    var f=color.split(","),t=percent<0?0:255,p=percent<0?percent*-1:percent,R=parseInt(f[0].slice(4)),G=parseInt(f[1]),B=parseInt(f[2]);
+    return "rgb("+(Math.round((t-R)*p)+R)+","+(Math.round((t-G)*p)+G)+","+(Math.round((t-B)*p)+B)+")";
+}
+
+//Fonction mettant à jout la couleur de l'horloge
 function updateColor(color)
 {
+    var shadedColor = shadeColor(color, -0.25);
     $("#matrix").css("background-color", color);
     $(".button-container").css("background-color", color);
     $(".button-color-container").css("background-color", color);
     $(".btnLanguage").css("background-color", color);
+//    $(".letterBox").css("color", shadedColor);
+//    $(".dot").css("color", shadedColor);
 }
 
 
