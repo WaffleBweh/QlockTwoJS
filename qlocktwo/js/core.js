@@ -27,13 +27,13 @@ function shadeColor(color, percent) {
 //Fonction mettant à jout la couleur de l'horloge
 function updateColor(color)
 {
-    var shadedColor = shadeColor(color, -0.25);
+//  var shadedColor = shadeColor(color, -0.25);
     $("#matrix").css("background-color", color);
     $(".button-container").css("background-color", color);
     $(".button-color-container").css("background-color", color);
     $(".btnLanguage").css("background-color", color);
-//    $(".letterBox").css("color", shadedColor);
-//    $(".dot").css("color", shadedColor);
+//  $(".letterBox").css("color", shadedColor);
+//  $(".dot").css("color", shadedColor);
 }
 
 
