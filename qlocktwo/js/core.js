@@ -24,7 +24,7 @@ function shadeColor(color, percent) {
     return "rgb("+(Math.round((t-R)*p)+R)+","+(Math.round((t-G)*p)+G)+","+(Math.round((t-B)*p)+B)+")";
 }
 
-//Fonction mettant à jout la couleur de l'horloge
+//Fonction mettant à jour la couleur de l'horloge
 function updateColor(color)
 {
 //  var shadedColor = shadeColor(color, -0.25);
